@@ -1,0 +1,8 @@
+"blabla"
+"radio's"
+'hij zei: "ik hou van jou"'
+'hij zei: "ik hou van radio\'s"'
+"een newline schrijf je als \\n"
+"een backslash schrijf je als \\\\"
+niet waar
+niet waar
