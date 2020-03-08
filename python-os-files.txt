@@ -1,0 +1,4 @@
+os.path.abspath(path)
+os.path.isfile(path)
+os.path.getsize(path)
+os.path.normpath(path)
