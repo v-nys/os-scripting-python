@@ -1,0 +1,4 @@
+sys.platform
+sys.getwindowsversion()
+sys.exit([arg])
+sys.getsizeof(object[, default])
