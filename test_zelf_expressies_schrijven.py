@@ -1,6 +1,6 @@
 import pytest
 
-def test_correct_values(input1):
+def test_correct_values():
     with open('python-zelf-expressies-schrijven.py') as fh:
         lines = fh.readlines()
         assert len(lines) >= 4, f"Je bestand bevat geen vier regels en voldoet dus niet aan de opgave."
