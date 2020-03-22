@@ -1,0 +1,17 @@
+^                                                    # begin
+\s*                                                  # optionele whitespace
+print\("hallo!"\)                                    # eerste print
+\n                                                   # newline
+print\(3\)                                           # tweede print
+\n                                                   # newline
+print\(99\.99\)                                      # derde print
+\n                                                   # newline
+print\(False\)                                       # vierde print
+\n                                                   # newline
+print\("radio's"\)                                   # vijfde print
+\n                                                   # newline
+print('hij\ zei:\ "ik\ hou\ van\ radio\\'s"'\)       # zesde print
+\n                                                   # newline
+print\("het\ is\ http\:\/\/,\ niet\ http:\\\\\\\\"\) # zevende print
+\s*                                                  # optionele whitespace
+$                                                    # einde
