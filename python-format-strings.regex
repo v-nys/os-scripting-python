@@ -4,6 +4,6 @@ import\ datetime                                                          # vere
 \s+                                                                       # moet iets van whitespace zijn
 print\(f"Het\ is\ vandaag\ \{datetime\.datetime\.now\(\)\:%d\-%m\-%Y\}"\) # eerste print
 \n                                                                        # newline
-print\(f"\{'README'\:\^80\}")                                             # tweede print
+print\(f"\{'README'\:\^80\}"\)                                            # tweede print
 \s*                                                                       # optionele whitespace
 $                                                                         # einde string
