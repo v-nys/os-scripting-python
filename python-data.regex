@@ -8,7 +8,7 @@
 \s+                                          # whitespace
 'hij\ zei:\ "ik\ hou\ van\ radio\\'s"'       # vierde stuk tekst
 \s+                                          # whitespace
-"een\ newline\ schrijf\ je\ als\ \\n"        # vijfde stuk tekst
+"een\ newline\ schrijf\ je\ als\ \\\\n"      # vijfde stuk tekst
 \s+                                          # whitespace
 "een\ backslash\ schrijf\ je\ als\ \\\\\\\\" # zesde stuk tekst
 \s+                                          # whitespace
