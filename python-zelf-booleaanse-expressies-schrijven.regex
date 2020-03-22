@@ -1,0 +1,10 @@
+^                                      # begin string
+byte1\ ?=\ ?\-?[0-9]+                  # toekenning eerste variabele
+\n                                     # newline
+byte2\ ?=\ ?\-?[0-9]+                  # toekenning tweede variabele
+\n                                     # newline
+byte1\ ?==\ ?10                        # vergelijking met 10
+\n                                     # newline
+byte2\ ?>=\ ?0\ and\ byte2\ ?<=?\ ?255 # vergelijking met 0 en 255 (inclusief of exclusief)
+\s*                                    # optionele whitespace
+$                                      # einde string
