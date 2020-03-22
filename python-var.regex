@@ -1,0 +1,19 @@
+^                                                                                                     # begin string
+\s*                                                                                                   # optionele whitespace
+seconden_per_minuut\ ?=\ ?60                                                                          # eerste variabele
+\n                                                                                                    # newline
+minuten_per_uur\ ?=\ ?60                                                                              # tweede variabele
+\n                                                                                                    # newline
+uren_per_dag\ ?=\ ?24                                                                                 # derde variabele
+\n                                                                                                    # newline
+dagen_per_week\ ?=\ ?7                                                                                # vierde variabele
+\n                                                                                                    # newline
+boodschap\ ?=\ ?"Er\ ?zijn\ ?zo\ ?veel\ ?seconden\ ?in\ ?een\ ?week\:"                                # vijfde variabele
+\n                                                                                                    # newline
+berekening\ ?=\ ?seconden_per_minuut\ ?\*\ ?minuten_per_uur\ ?\*\ ?uren_per_dag\ ?\*\ ?dagen_per_week # zesde variabele
+\n                                                                                                    # newline
+print\(boodschap\)                                                                                    # eerste print statement
+\n                                                                                                    # newline
+print\(berekening\)                                                                                   # tweede print statement
+\s*                                                                                                   # optionele whitespace
+$                                                                                                     # einde string
