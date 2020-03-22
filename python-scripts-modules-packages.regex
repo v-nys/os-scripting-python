@@ -1,0 +1,5 @@
+^                          # begin string
+\s*                        # optionele whitespace
+pip\ install\ flask\-ipban # de link
+\s*                        # optionele whitespace
+$                          # einde string
