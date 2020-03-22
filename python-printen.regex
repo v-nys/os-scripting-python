@@ -12,6 +12,6 @@ print\("radio's"\)                                   # vijfde print
 \n                                                   # newline
 print\('hij\ zei:\ "ik\ hou\ van\ radio\\'s"'\)       # zesde print
 \n                                                   # newline
-print\("het\ is\ http\:\/\/,\ niet\ http:\\\\\\\\"\) # zevende print
+print\("het\ is\ http\://,\ niet\ http:\\\\\\\\"\) # zevende print
 \s*                                                  # optionele whitespace
 $                                                    # einde
