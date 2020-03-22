@@ -1,0 +1,11 @@
+^                  # begin string
+\s*                # optionele whitespace
+a\ ?=\ ?int\("192"\) # eerste omgezette waarde
+\n                 # newline
+b\ ?=\ ?int\("168"\) # tweede omgezette waarde
+\n                 # newline
+c\ ?=\ ?int\("0"\)   # derde omgezette waarde
+\n                 # newline
+d\ ?=\ ?int\("1"\)   # vierde omgezette waarde
+\s*                # optionele whitespace
+$                  # einde string
