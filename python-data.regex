@@ -1,0 +1,19 @@
+^                                            # begin string
+\s*                                          # optionele whitespace
+"blabla"                                     # eerste stuk tekst
+\s+                                          # whitespace
+"radio's"                                    # tweede stuk tekst
+\s+                                          # whitespace
+'hij\ zei:\ "ik\ hou\ van\ jou"'             # derde stuk tekst
+\s+                                          # whitespace
+'hij\ zei:\ "ik\ hou\ van\ radio\\'s"'       # vierde stuk tekst
+\s+                                          # whitespace
+"een\ newline\ schrijf\ je\ als\ \\n"        # vijfde stuk tekst
+\s+                                          # whitespace
+"een\ backslash\ schrijf\ je\ als\ \\\\\\\\" # zesde stuk tekst
+\s+                                          # whitespace
+niet\ waar                                   # eerste vraag
+\s+                                          # whitespace
+niet\ waar                                   # tweede vraag
+\s*                                          # optionele whitespace
+$                                            # einde string
