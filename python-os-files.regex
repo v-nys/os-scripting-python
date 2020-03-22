@@ -1,0 +1,12 @@
+^                          # begin string
+\s*                        # optionele whitespace
+os\.path\.abspath\(path\)  # vraag 1
+\n                         # newline
+os\.path\.isfile\(path\)   # vraag 2
+\n                         # newline
+os\.path\.getsize\(path\)  # vraag 3
+\n                         # newline
+os\.path\.normpath\(path\) # vraag 4
+\s*                        # optionele whitespace
+$                          # einde string
+
