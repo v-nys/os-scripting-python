@@ -1,0 +1,5 @@
+^         # begin string
+\s*       # optionele whitespace
+7\ ?/\ ?4 # de expressie
+\s*       # optionele whitespace
+$         # einde string
