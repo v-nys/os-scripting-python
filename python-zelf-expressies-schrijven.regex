@@ -1,0 +1,20 @@
+^                                              # begin string
+(                                              # groep met reeks alternatieven
+4\ ?\*\ ?2\ ?\+\ ?9                            # schrijfwijze zonder haakjes
+|                                              # of 
+\(4\ ?\*\ ?2\)\ ?\+\ ?9                        # schrijfwijze met acceptabele haakjes
+)                                              # einde groep met reeks alternatieven
+\n                                             # newline
+\(4\ ?\+\ ?2\)\ ?\*\ ?9                        # product van de som van 4 en 2 en 9
+\n                                             # newline
+7\ ?\/\ ?\(3\ ?\/\ ?2\)                        # 7 gedeeld door de helft van 3
+\n                                             # newline
+(                                              # groep
+"hello"\ ?\+\ ?"\ "\ ?\+\ ?"world"              # drie stukken tekst
+|                                              # OF
+"hello\ "\ ?\+\ ?"world"                       # twee stukken tekst met spatie eerst
+|                                              # OF
+"hello"\ ?\+\ ?"\ world"                       # twee stukken tekst met spatie laatst
+)                                              # einde groep
+\s*                                            # optionele whitespace
+$                                              # einde string
