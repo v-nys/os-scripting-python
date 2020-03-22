@@ -1,0 +1,5 @@
+^             # begin tekst
+\s*           # optionele whitespace
+[nN]iet\ waar # antwoord
+\s*           # optionele whitespace
+$             # einde tekst
