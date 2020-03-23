@@ -1,0 +1,22 @@
+^                                                                   # begin string
+\n*                                                                 # optionele whitespace
+(
+print\("Hello,\ World!"\.split\(",\ "\)\)
+|
+(?P<varname1>[_a-zA-Z][_a-zA-Z0-9]*)\ ?=\ ?"Hello,\ World!"
+\n
+print\((?P=varname1)\.split\(",\ "\)\)
+|
+(?P<varname2>[_a-zA-Z][_a-zA-Z0-9]*)\ ?=\ ?"Hello,\ World!"
+\n
+(?P<varname3>[_a-zA-Z][_a-zA-Z0-9]*)\ ?=\ ?(?P=varname2)\.split\(",\ "\)
+\n
+print\((?P=varname3)\)
+|
+(?P<varname4>[_a-zA-Z][_a-zA-Z0-9]*)\ ?=\ ?"Hello,\ World!"\.split\(",\ "\)
+\n
+print\((?P=varname4)\)
+)
+\s*                                                                 # optionele whitespace
+$                                                                   # einde string
+
