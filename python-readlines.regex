@@ -1,0 +1,18 @@
+^
+\n*
+with\ open\("myfile\.txt"\)\ as\ (?P<varname1>[_a-zA-Z][_a-zA-Z0-9]*)\:
+\n
+(
+\ \ \ \ for\ (?P<varname2>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ (?P=varname1)\.readlines\(\)\:
+\n
+\ \ \ \ \ \ \ \ print\((?P=varname2)\)
+|
+\ \ \ \ (?P<varname3>[_a-zA-Z][_a-zA-Z0-9]*)\ ?=\ ?(?P=varname1)\.readlines\(\)
+\n
+\ \ \ \ for\ (?P<varname4>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ (?P=varname3)\:
+\n
+\ \ \ \ \ \ \ \ print\((?P=varname4)\)
+)
+\n
+\s*
+$
