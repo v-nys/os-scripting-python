@@ -1,0 +1,21 @@
+^                                                                   # begin string
+\n*                                                                 # optionele whitespace
+letter\ ?=\ ?""                                                     # gevraagde variabele
+\n                                                                  # newline
+(                                                                   # kan for doen over literal of variabele
+for\ (?P<varname1>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ "acdigofljeuhiuir"\: # for over literal
+|                                                                   # OF
+(?P<varname2>[_a-zA-Z][_a-zA-Z0-9]*)\ ?=\ ?"acdigofljeuhiuir"       # initialisatie
+\n                                                                  # newline
+for\ (?P<varname1>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ (?P=varname2)\:      # for over variabele
+)                                                                   # einde disjunctie
+\n                                                                  # newline
+\ \ \ \ if\ (?P=varname1)\ ?>\ ?"m"\:                               # test
+\n                                                                  # newline
+\ \ \ \ \ \ \ \ letter\ ?=\ ?(?P=varname1)                          # toekenning
+\n                                                                  # newline
+\ \ \ \ \ \ \ \ break                                               # lus verlaten
+\n                                                                  # newline
+print\(letter\)                                                     # tonen resultaat
+\s*                                                                 # optionele whitespace
+$                                                                   # einde string
