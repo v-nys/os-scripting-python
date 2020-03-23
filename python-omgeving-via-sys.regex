@@ -6,7 +6,7 @@ sys\.getwindowsversion\(\)             # tweede antwoord
 \n                                     # newline
 sys\.exit\(\[arg\]\)                   # derde antwoord
 \n                                     # newline
-sys\.getsizeof\(object\[,\ default\]\) # vierde antwoord
+sys\.getsizeof\(object\[,\ ?default\]\) # vierde antwoord
 \s*                                    # optionele whitespace
 $                                      # einde string
 
