@@ -1,0 +1,13 @@
+^                                                                   # begin string
+\n*                                                                 # optionele whitespace
+list_a\ ?=\ ?\[1,\ ?2,\ ?3,\ ?4,\ ?5\]
+\n
+list_b\ ?=\ ?\[\]
+\n
+for\ (?P<varname>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ list_a\:
+\n
+\ \ \ \ list_b\.append\(((?P=varname)\ ?\*\ ?2|2\ ?\*\ ?(?P=varname))\)
+\n
+print\(list_b\)
+\s*                                                                     # optionele whitespace
+$                                                                       # einde string
