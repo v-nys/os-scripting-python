@@ -1,6 +1,6 @@
 ^                                                               # begin string
 \s*                                                             # optionele whitespace
-for\ (?P<varname>[_a-zA-Z][_a-zA-Z0-9]+)\ in\ "OS\ Scripting"\: # iteratie
+for\ (?P<varname>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ "OS\ Scripting"\: # iteratie
 \n                                                              # newline
 \ \ \ \ print\((?P=varname)\)                                   # print van de variabele
 \s*                                                             # optionele whitespace

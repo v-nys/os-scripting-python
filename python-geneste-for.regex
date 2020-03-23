@@ -1,10 +1,10 @@
 ^                                                              # begin string
 \s*                                                            # optionele whitespace
-for\ (?P<varname1>[_a-zA-Z][_a-zA-Z0-9]+)\ in\ "123"\:         # lus 1
+for\ (?P<varname1>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ "123"\:         # lus 1
 \n                                                             # newline
 \ \ \ \ print\((?P=varname1)\)                                 # print van de variabele
 \n                                                             # newline
-\ \ \ \ for\ (?P<varname2>[_a-zA-Z][_a-zA-Z0-9]+)\ in\ "abc"\: # lus 2
+\ \ \ \ for\ (?P<varname2>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ "abc"\: # lus 2
 \n                                                             # newline
 \ \ \ \ \ \ \ \ print\((?P=varname2)\)                         # print van de variabele
 \s*                                                            # optionele whitespace

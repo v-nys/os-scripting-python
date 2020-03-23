@@ -1,0 +1,9 @@
+^                                                        # begin string
+\n*                                                      # optionele whitespace
+my_list\ ?=\ ?\[1,\ ?3,\ ?5,\ ?7,\ ?9\]                  # aanmaken variabele
+\n                                                       # newline
+for\ (?P<varname1>[_a-zA-Z][_a-zA-Z0-9]*)\ in\ my_list\: # lus 1
+\n                                                       # newline
+\ \ \ \ print\((?P=varname1)\)                           # print van de variabele
+\s*                                                      # optionele whitespace
+$                                                        # einde string
