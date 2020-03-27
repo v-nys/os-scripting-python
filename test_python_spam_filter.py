@@ -1,30 +1,39 @@
 import pytest
 from unittest.mock import MagicMock, mock_open
-import python_spam_file
+import python_spam_filter
 
-def _opened_file_mock(lines):
+def _opened_file_mock(*args):
     base_mock = MagicMock(name='mock for open')
-    mock_context_manager = MagicMock(name='mock for context manager')
-    mock_context_manager.__enter__.return_value.read.return_value = lines
-    base_mock.return_value = mock_context_manager
+    mock_context_managers = []
+    for (arg_number,arg) in enumerate(args):
+        mock_context_manager = MagicMock(name=f"mock for opened file context manager {arg_number}")
+        mock_context_manager.__enter__.return_value.read.return_value = arg
+        mock_context_managers.append(mock_context_manager)
+    base_mock.side_effect=mock_context_managers
     return base_mock
 
-BEVAT_SPAM = "spam"
-IN_ORDE = "in orde"
-
-@pytest.mark.parametrize("lines,outcome",[("you have won the lottery",BEVAT_SPAM),\
-                                          ("you are lucky\nyou have won the lottery",BEVAT_SPAM),\
-                                          ("""you are lucky
-                                              you have received an inheritance
-                                              please pay the transfer fee""",BEVAT_SPAM),\
-                                          ("192.168.0.1\n13.13.13.13",IN_ORDE)])
-def test_run_as_script(capfd,monkeypatch,lines,outcome):
-    opens_mock = mock_open(read_data=lines) # om te openen met file_is_spam
-    inputs_mock = MagicMock(name="mock for input") # file_is_spam vraagt om pad
+contents1 = "you have won the lottery"
+contents2 = """congratulations on your inheritance
+se pay the transfer fee"""
+contents3 = """important message from school
+lala"""
+contents4 = "buy cheap viagra online"
+contents5 = "this is not spam"
+@pytest.mark.parametrize("contents,outcome",[(contents1,True),(contents2,True),(contents3,False),\
+                                             (contents4,True),(contents5,False)])
+def test_spam_filter(capfd,monkeypatch,contents,outcome):
+    opens_mock = mock_open(read_data=contents)
+    input_mock = MagicMock(name="mock for input")
+    input_mock.return_value = "/home/test"
+    listdir_mock = MagicMock(name="mock for listdir")
+    listdir_mock.return_value = "file.txt"
     with monkeypatch.context() as m:
         m.setattr("builtins.open", opens_mock)
-        m.setattr("builtins.input", inputs_mock)
-        python_spam_file.file_is_spam()
+        m.setattr("builtins.input", input_mock)
+        m.setattr("os.listdir", listdir_mock)
+        python_spam_filter.spam_filter()
         captured = capfd.readouterr()
-    assert outcome in captured.out,\
-           f"""De tekst "{lines}" is {outcome}, maar jouw oplossing geeft niet (exact) de verwachte output."""
+        if outcome:
+            assert "spam" in captured.out and "geen" not in captured.out
+        else:
+            assert "geen spam" in captured.out
