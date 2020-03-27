@@ -13,6 +13,6 @@ def test_run_as_script(capfd,monkeypatch):
         m.setattr("builtins.input", input_mock)
         python_files_doorlopen.show_files_in_directory()
         captured = capfd.readouterr()
-        assert "/home/test/karweittjes.txt\n" in captured.out
-        assert "/home/test/verlanglijstje.txt\n" in captured.out
-        assert "/home/test/boodschappenlijstje.txt" in captured.out
+        assert "/home/test/karweitjes.txt\n" in captured.out, "/home/test bevat karweitjes.txt maar /home/test/karweitjes.txt kwam niet voor in output"
+        assert "/home/test/verlanglijstje.txt\n" in captured.out, "/home/test bevat verlanglijstje.txt maar /home/test/verlanglijstje.txt kwam niet voor in output"
+        assert "/home/test/boodschappenlijstje.txt\n" in captured.out, "/home/test bevat boodschappenlijstje.txt maar /home/test/boodschappenlijstje.txt kwam niet voor in output"
