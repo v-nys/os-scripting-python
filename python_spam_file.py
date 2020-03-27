@@ -6,8 +6,8 @@ def file_is_spam():
     with open(answer) as fh:
         is_spam = False
         for line in fh.readlines():
-            is spam = is_spam or python_spam_regel_functie.check_spam_line(line)
+            is_spam = is_spam or python_spam_regel_functie.check_spam_line(line)
     if is_spam:
-        print("Dit is spam.")
+        print("Deze file bevat spam!")
     else:
-        print("Dit is geen spam.")
+        print("Deze file is in orde!")
