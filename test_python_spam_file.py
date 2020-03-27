@@ -1,5 +1,5 @@
 import pytest
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, mock_open
 import python_spam_file
 
 def _opened_file_mock(lines):
@@ -19,8 +19,8 @@ IN_ORDE = "in orde"
                                               please pay the transfer fee""",BEVAT_SPAM),\
                                           ("192.168.0.1\n13.13.13.13",IN_ORDE)])
 def test_run_as_script(capfd,monkeypatch,lines,outcome):
-    opens_mock = _opened_file_mock(lines)
-    inputs_mock = MagicMock(name="mock for input")
+    opens_mock = mock_open(read_data=lines) # om te openen met file_is_spam
+    inputs_mock = MagicMock(name="mock for input") # file_is_spam vraagt om pad
     with monkeypatch.context() as m:
         m.setattr("builtins.open", opens_mock)
         m.setattr("builtins.input", inputs_mock)
