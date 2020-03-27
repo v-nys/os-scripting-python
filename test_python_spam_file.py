@@ -27,4 +27,4 @@ def test_run_as_script(capfd,monkeypatch,lines,outcome):
         python_spam_file.file_is_spam()
         captured = capfd.readouterr()
     assert outcome in captured.out,\
-           f"""De tekst "{lines}" is {outcome}, maar jouw oplossing geeft niet (exact) de verwachte output."""
+           f"""De tekst "{lines.replace('\n','\\n')}" is {outcome}, maar jouw oplossing geeft niet (exact) de verwachte output."""
