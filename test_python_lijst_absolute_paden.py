@@ -8,6 +8,7 @@ def test_get_files_in_directory(capfd,monkeypatch):
     with monkeypatch.context() as m:
         m.setattr("os.listdir", listdir_mock)
         answer = python_lijst_absolute_paden.get_files_in_directory("/home/test")
+        assert answer is not None, "geen resultaat teruggekregen van de functie - misschien een return vergeten?"
         assert "/home/test/karweitjes.txt" in answer, "/home/test bevat karweitjes.txt maar /home/test/karweitjes.txt kwam niet voor in resultaat"
         assert "/home/test/verlanglijstje.txt" in answer, "/home/test bevat verlanglijstje.txt maar /home/test/verlanglijstje.txt kwam niet voor in resultaat"
         assert "/home/test/boodschappenlijstje.txt" in answer, "/home/test bevat boodschappenlijstje.txt maar /home/test/boodschappenlijstje.txt kwam niet voor in resultaat"
