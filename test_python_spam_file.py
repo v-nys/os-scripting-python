@@ -1,7 +1,6 @@
 import pytest
-import importlib
-import sys
 from unittest.mock import MagicMock
+import python_spam_file
 
 def _opened_file_mock(lines):
     base_mock = MagicMock(name='mock for open')
@@ -10,8 +9,8 @@ def _opened_file_mock(lines):
     base_mock.return_value = mock_context_manager
     return base_mock
 
-BEVAT_SPAM = "Deze file bevat spam!"
-IN_ORDE = "Deze file is in orde!"
+BEVAT_SPAM = "spam"
+IN_ORDE = "in orde"
 
 @pytest.mark.parametrize("lines,outcome",[("you have won the lottery",BEVAT_SPAM),\
                                           ("you are lucky\nyou have won the lottery",BEVAT_SPAM),\
@@ -25,9 +24,7 @@ def test_run_as_script(capfd,monkeypatch,lines,outcome):
     with monkeypatch.context() as m:
         m.setattr("builtins.open", opens_mock)
         m.setattr("builtins.input", inputs_mock)
-        if("python_spam_file" in sys.modules):
-            importlib.reload(sys.modules["python_spam_file"])
-        else:
-            import python_spam_file
+        python_spam_file.file_is_spam()
         captured = capfd.readouterr()
-    assert outcome in captured.out
+    assert outcome in captured.out,\
+           f"""De tekst "{lines}" is {outcome}, maar jouw oplossing geeft onverwachte output."""
