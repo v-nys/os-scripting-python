@@ -7,7 +7,7 @@ def _passthrough_input(generator,prompt):
     print(prompt,end='') # input does not print a newline
     return generator.__next__()
 
-@pytest.mark.parametrize("user_inputs",[("ja",),("neen",),("boe","ja"),("boe","neen"),("boe","boe","boe","ja")])
+@pytest.mark.parametrize("user_inputs",[["ja"],["neen"],["boe","ja"],["boe","neen"],["boe","boe","boe","ja"]])
 def test_vraag_ja_of_neen(capfd,monkeypatch,user_inputs):
     # assume there is always an acceptable answer at the end
     question = "Gelieve ja of neen te antwoorden."
