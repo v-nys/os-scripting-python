@@ -1,7 +1,7 @@
 import pytest
 import functools
 from unittest.mock import MagicMock, mock_open
-import collect_ip_addresses
+import rem_ip_adressen_verzamelen
 
 def _passthrough_input(generator,prompt):
     print(prompt,end='') # input does not print a newline
@@ -19,5 +19,5 @@ def test_verzamel_ip_adressen(capfd,monkeypatch,user_inputs):
     input_mock.side_effect = functools.partial(_passthrough_input,generator)
     with monkeypatch.context() as m:
         m.setattr("builtins.input", input_mock)
-        result = collect_ip_addresses.verzamel_ip_adressen()
+        result = rem_ip_adressen_verzamelen.verzamel_ip_adressen()
         assert result == user_inputs[:-1], f"Je functie levert niet het gewenste resultaat voor volgende reeks IP-adressen: {','.join(user_inputs[:-1])}"
