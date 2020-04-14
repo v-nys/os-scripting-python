@@ -24,4 +24,4 @@ def test_vraag_ja_of_neen(capfd,monkeypatch,user_inputs):
         rem_geldige_input_eisen.vraag_ja_of_neen()
         captured = capfd.readouterr()
         # allow for some deviation (WS,...)
-        assert expected in captured.out
+        assert expected in captured.out, f"Je oplossing doet niet het gevraagde bij inputreeks {user_inputs}. Let er ook op dat de schrijfwijze van de vraag en het bedankje *identiek* moeten zijn aan die in het voorbeeld, inclusief de newline na de vraag."
