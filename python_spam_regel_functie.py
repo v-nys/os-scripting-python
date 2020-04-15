@@ -1,4 +1,4 @@
-def check_spam_line(line):
+def line_is_spam(line):
     words = line.split(" ")
     is_spam = False
     for word in words:
