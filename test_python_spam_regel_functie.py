@@ -20,5 +20,5 @@ def _random_text_with_word(word):
                                          (_random_text_with_word("inheritance"),True),\
                                          ("testtest",False)])
 def test_run_as_script(line,outcome):
-    result = python_spam_regel_functie.check_spam_line(line)
+    result = python_spam_regel_functie.line_is_spam(line)
     assert result == outcome, f"""de tekst "{line}" is{" geen" if (not outcome) else ""} spam, maar is in jouw functie anders geklasseerd"""
