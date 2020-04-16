@@ -12,8 +12,10 @@ boodschap\ ?=\ ?"Er\ ?zijn\ ?zo\ ?veel\ ?seconden\ ?in\ ?een\ ?week\:"          
 \n+                                                                                                   # newline
 berekening\ ?=\ ?seconden_per_minuut\ ?\*\ ?minuten_per_uur\ ?\*\ ?uren_per_dag\ ?\*\ ?dagen_per_week # zesde variabele
 \n+                                                                                                   # newline
-print\(boodschap\)                                                                                    # eerste print statement
-\n+                                                                                                   # newline
-print\(berekening\)                                                                                   # tweede print statement
+(print\(boodschap\)                                                                                   # eerste print statement
+ \n+                                                                                                  # newline
+ print\(berekening\)                                                                                  # tweede print statement
+ |                                                                                                    # OF beide samen
+ print\(boodschap\ *\+\ *"\ "\ *\+\ *berekening\))                                                    # via +
 \s*                                                                                                   # optionele whitespace
 $                                                                                                     # einde string
