@@ -1,19 +1,19 @@
 ^                                                                                                     # begin string
 \s*                                                                                                   # optionele whitespace
 seconden_per_minuut\ ?=\ ?60                                                                          # eerste variabele
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 minuten_per_uur\ ?=\ ?60                                                                              # tweede variabele
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 uren_per_dag\ ?=\ ?24                                                                                 # derde variabele
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 dagen_per_week\ ?=\ ?7                                                                                # vierde variabele
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 boodschap\ ?=\ ?"Er\ ?zijn\ ?zo\ ?veel\ ?seconden\ ?in\ ?een\ ?week\:"                                # vijfde variabele
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 berekening\ ?=\ ?seconden_per_minuut\ ?\*\ ?minuten_per_uur\ ?\*\ ?uren_per_dag\ ?\*\ ?dagen_per_week # zesde variabele
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 print\(boodschap\)                                                                                    # eerste print statement
-\n                                                                                                    # newline
+\n+                                                                                                   # newline
 print\(berekening\)                                                                                   # tweede print statement
 \s*                                                                                                   # optionele whitespace
 $                                                                                                     # einde string
