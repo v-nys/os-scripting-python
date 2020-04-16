@@ -3,8 +3,9 @@ import functools
 from unittest.mock import MagicMock, mock_open
 import rem_geldige_input_eisen
 
-def _passthrough_input(generator,prompt):
-    print(prompt,end='') # input does not print a newline
+def _passthrough_input(generator,prompt=None):
+    if prompt:
+        print(prompt,end='') # input does not print a newline
     return generator.__next__()
 
 @pytest.mark.parametrize("user_inputs",[["ja"],["neen"],["boe","ja"],["boe","neen"],["boe","boe","boe","ja"]])
