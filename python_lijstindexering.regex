@@ -1,4 +1,3 @@
-^                                                        # begin string
 print\(                                                  # één print
 .*                                                       # kan niet op alles anticiperen
 mijn_lijst\[.*\]                                         # maar dit moet er staan
