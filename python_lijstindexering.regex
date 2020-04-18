@@ -1,0 +1,8 @@
+^                                                        # begin string
+print\(                                                  # één print
+.*                                                       # kan niet op alles anticiperen
+mijn_lijst\[.*\]                                         # maar dit moet er staan
+.*                                                       # en dan mag er weer vanalles
+\)                                                       # einde print
+\s*                                                      # optionele whitespace
+$                                                        # einde string
