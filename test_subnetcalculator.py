@@ -33,7 +33,7 @@ def _one_bits_in_netmask(numberlist):
 def _apply_network_mask(host_address,netmask):
     network_address = []
     for idx in range(4):
-        broadcast_address.append(host_address & netmask)
+        network_address.append(host_address & netmask)
     return network_address
 
 def _netmask_to_wildcard_mask(numberlist):
