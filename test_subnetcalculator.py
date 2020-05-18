@@ -53,7 +53,7 @@ def _get_broadcast_address(network_address,wildcard_mask):
     return broadcast_address
 
 def _prefix_length_to_max_host(netmask_length):
-    return 2 ** netmask_length - 2
+    return 2 ** (32 - netmask_length) - 2
 
 @pytest.mark.parametrize("numberlist",[[192,168,0,191],[1,1,1,1],[192,168,0,191,1],[255,255,255,255],[0,0,0,0],[0,0,-1,0],[254,254,254,254]])
 def test_is_valid_ip_address(numberlist):
