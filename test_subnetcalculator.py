@@ -18,7 +18,7 @@ def _is_valid_netmask(numberlist):
     for symbol in binary_netmask:
         if checking_ones and symbol == "0":
             checking_ones = False
-        elif not checking_ones and symbol == "1"
+        elif not checking_ones and symbol == "1":
             return False
     return True
 
@@ -38,7 +38,7 @@ def _apply_network_mask(host_address,netmask):
 
 def _netmask_to_wildcard_mask(numberlist):
     binary_netmask = "".join([f"{number:08b}" for number in numberlist])
-    mirror = "".join(["1" for elem in binary_netmask if elem == "0" else "1"])
+    mirror = "".join(["1" if elem == "0" else "1" for elem in binary_netmask])
 
 def _get_broadcast_address(network_address,wildcard_mask):
     broadcast_address = []
