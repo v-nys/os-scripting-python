@@ -38,8 +38,13 @@ def _apply_network_mask(host_address,netmask):
 
 def _netmask_to_wildcard_mask(numberlist):
     binary_netmask = "".join([f"{number:08b}" for number in numberlist])
-    mirror = "".join(["1" if elem == "0" else "1" for elem in binary_netmask])
-    return mirror
+    binary_wildcard = ""
+    for symbol in binary_netmask:
+        if symbol == "0":
+            binary_wildcard.append("1")
+        else:
+            binary_wildcard.append("0")
+    return [int(binary_wildcard[0:8],2),int(binary_wildcard[8:16],2),int(binary_wildcard[16:24],2),int(binary_wildcard[24:32],2)]
 
 def _get_broadcast_address(network_address,wildcard_mask):
     broadcast_address = []
