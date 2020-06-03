@@ -59,19 +59,19 @@ def _prefix_length_to_max_host(netmask_length):
 def test_is_valid_ip_address(numberlist):
     student = subnetcalculator.is_valid_ip_address(numberlist)
     model = _is_valid_ip_address(numberlist)
-    assert student == model,f"verschil met modeloplossing is_valid_ip_address voor invoer {input1}: jouw oplossing levert {student}, de modeloplossing levert {model}"
+    assert student == model,f"verschil met modeloplossing is_valid_ip_address voor invoer {numberlist}: jouw oplossing levert {student}, de modeloplossing levert {model}"
 
 @pytest.mark.parametrize("numberlist",[[192,168,0,191],[1,1,1,1],[192,168,0,191,1],[255,255,255,255],[0,0,0,0],[254,254,254,254],[255,0,0,0],[192,0,0,0],[192,168,0,0],[255,192,0,0]])
 def test_is_valid_netmask(numberlist):
     student = subnetcalculator.is_valid_netmask(numberlist)
     model = _is_valid_netmask(numberlist)
-    assert student == model,f"verschil met modeloplossing is_valid_netmask voor invoer {input1}: jouw oplossing levert {student}, de modeloplossing levert {model}"
+    assert student == model,f"verschil met modeloplossing is_valid_netmask voor invoer {numberlist}: jouw oplossing levert {student}, de modeloplossing levert {model}"
 
 @pytest.mark.parametrize("numberlist",[[255,255,255,255],[0,0,0,0],[255,0,0,0],[192,0,0,0],[255,192,0,0]])
 def test_one_bits_in_netmask(numberlist):
     student = subnetcalculator.one_bits_in_netmask(numberlist)
     model = _one_bits_in_netmask(numberlist)
-    assert student == model,f"verschil met modeloplossing one_bits_in_netmask voor invoer {input1}: jouw oplossing levert {student}, de modeloplossing levert {model}"
+    assert student == model,f"verschil met modeloplossing one_bits_in_netmask voor invoer {numberlist}: jouw oplossing levert {student}, de modeloplossing levert {model}"
 
 @pytest.mark.parametrize("host_address,netmask",[([192,168,0,191],[255,255,255,255]),\
                                                  ([192,168,0,191],[0,0,0,0]),\
@@ -87,7 +87,7 @@ def test_apply_network_mask(host_address,netmask):
 def test_netmask_to_wildcard_mask(numberlist):
     student = subnetcalculator.netmask_to_wildcard_mask(numberlist)
     model = _netmask_to_wildcard_mask(numberlist)
-    assert student == model,f"verschil met modeloplossing netmask_to_wildcard_mask voor invoer {input1}: jouw oplossing levert {student}, de modeloplossing levert {model}"
+    assert student == model,f"verschil met modeloplossing netmask_to_wildcard_mask voor invoer {numberlist}: jouw oplossing levert {student}, de modeloplossing levert {model}"
 
 @pytest.mark.parametrize("host_address,wildcard_mask",[([192,168,0,191],[255,255,255,255]),\
                                                        ([192,168,0,191],[0,0,0,0]),\
