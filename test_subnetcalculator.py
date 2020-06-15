@@ -52,7 +52,7 @@ def _get_broadcast_address(network_address,wildcard_mask):
         broadcast_address.append(network_address[idx] | wildcard_mask[idx])
     return broadcast_address
 
-def _prefix_length_to_max_host(netmask_length):
+def _prefix_length_to_max_hosts(netmask_length):
     return 2 ** (32 - netmask_length) - 2
 
 @pytest.mark.parametrize("numberlist",[[192,168,0,191],[1,1,1,1],[192,168,0,191,1],[255,255,255,255],[0,0,0,0],[0,0,-1,0],[254,254,254,254]])
@@ -100,7 +100,8 @@ def test_apply_network_mask(host_address,wildcard_mask):
     assert student == model,f"verschil met modeloplossing get_broadcast_address voor hostadres {host_address} en wildcard mask {wildcard_mask}: jouw oplossing levert {student}, de modeloplossing levert {model}"
 
 
+@pytest.mark.parametrize("prefix_length",list(range(1,32)))
 def test_prefix_length_to_max_hosts(prefix_length):
     student = subnetcalculator.prefix_length_to_max_hosts(prefix_length)
-    model = _prefix_length_to_max_host(prefix_length)
+    model = _prefix_length_to_max_hosts(prefix_length)
     assert student == model,f"verschil met modeloplossing prefix_length_to_max_hosts voor lengte {prefix_length}: jouw oplossing levert {student}, de modeloplossing levert {model}"
